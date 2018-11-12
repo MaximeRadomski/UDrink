@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/00-SplashScreen.unity
+    guid: e9d9e458bc940d440b9d0a3a06f9c3dd
+  - enabled: 1
     path: Assets/Scenes/00-StartMenu.unity
     guid: 1b1c4a32da6a4bf44ac91c1f309107d8
   - enabled: 1
@@ -14,3 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/02-RandomMenu.unity
     guid: 83de42f105b9e9948aec9e351a1e17ad
+  - enabled: 1
+    path: Assets/Scenes/03-GetReady.unity
+    guid: 748e6224d088dd54680f6f212d2b8b2e
+  - enabled: 1
+    path: Assets/Scenes/Games/001-FortuneWheel.unity
+    guid: cee61f219ddd7a1469d8d6854ffebb86

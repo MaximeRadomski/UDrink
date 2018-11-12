@@ -16,7 +16,6 @@ public class StartMenuBehavior : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			_click.Play();
 			Application.Quit();
 		}
 	}
