@@ -21,5 +21,8 @@ EditorBuildSettings:
     path: Assets/Scenes/03-GetReady.unity
     guid: 748e6224d088dd54680f6f212d2b8b2e
   - enabled: 1
+    path: Assets/Scenes/03-GetPlayerReady.unity
+    guid: 850d91e4f5a01a24abbd9fc26d1205ce
+  - enabled: 1
     path: Assets/Scenes/Games/001-FortuneWheel.unity
     guid: cee61f219ddd7a1469d8d6854ffebb86

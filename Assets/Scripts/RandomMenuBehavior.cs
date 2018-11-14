@@ -72,6 +72,7 @@ public class RandomMenuBehavior : MonoBehaviour
 		var randomSceneNumber = UnityEngine.Random.Range (1, _nbScenes);
 		PlayerPrefs.SetInt ("RandomSceneNumber", randomSceneNumber);
 		PlayerPrefs.SetInt ("PlayersNumber", _nbPlayer);
+		PlayerPrefs.SetInt("CurrentPlayer", 1);
 		Invoke("DestroyAfterListeningClick", 0.5f);
 		SceneManager.LoadScene("03-GetReady");
 	}

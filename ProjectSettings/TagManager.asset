@@ -44,6 +44,15 @@ TagManager:
   - name: Background
     uniqueID: 3858317541
     locked: 0
+  - name: Game Back
+    uniqueID: 816867593
+    locked: 0
+  - name: Game Mid
+    uniqueID: 4027876317
+    locked: 0
+  - name: Game Top
+    uniqueID: 2693471643
+    locked: 0
   - name: UI
     uniqueID: 2859021445
     locked: 0

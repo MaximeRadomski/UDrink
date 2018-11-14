@@ -5,25 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class GetReadyBehavior : MonoBehaviour
 {
-	private AudioSource _click;
+	public AudioSource Click01;
+	public AudioSource Click02;
+
 	private GameObject _timerNumber;
 	private int _timerValue;
-	private string _nextSceneName;
 	private List<string> TitlesNames = new List<string>{ "Title01", "Title02", "SlowTitle01", "SlowTitle02" };
+	private bool _timerSemiInterval = true;
 
 	void Start()
 	{
-		_click = this.GetComponent<AudioSource>();
+		Click01 = this.GetComponent<AudioSource>();
 		_timerNumber = GameObject.Find ("TimerNumber");
 		_timerValue = 3;
 		var randomSceneNumber = PlayerPrefs.GetInt ("RandomSceneNumber");
 		var tmpScene = (ScenesEnum)randomSceneNumber;
 		var tmpSceneName = tmpScene.ToString ();
 		var tmpSceneUpperName = tmpSceneName.Replace ("0", " ");
-		tmpSceneName = tmpSceneName.Replace ("0", "");
 		DisplaySceneNameInTitles(tmpSceneUpperName.ToUpper());
-		_nextSceneName = randomSceneNumber.ToString ("D3") + "-" + tmpSceneName;
-		Invoke("DecreaseTimerNumber", 1.0f);
+		Invoke("DecreaseTimerNumber", 0.5f);
 	}
 
 	private void DisplaySceneNameInTitles(string sceneUpperName)
@@ -40,12 +40,20 @@ public class GetReadyBehavior : MonoBehaviour
 
 	private void DecreaseTimerNumber()
 	{
+		if (_timerSemiInterval)
+		{
+			_timerSemiInterval = false;
+			Click02.Play ();
+			Invoke("DecreaseTimerNumber", 0.5f);
+			return;
+		}
 		--_timerValue;
-		_click.Play ();
+		Click01.Play ();
 		if (_timerValue > 0)
 		{
 			_timerNumber.GetComponent<UnityEngine.UI.Text> ().text = _timerValue.ToString ();
-			Invoke("DecreaseTimerNumber", 1.0f);
+			_timerSemiInterval = true;
+			Invoke("DecreaseTimerNumber", 0.5f);
 		}
 		else
 		{
@@ -56,6 +64,6 @@ public class GetReadyBehavior : MonoBehaviour
 
 	private void GoToNextScene()
 	{
-		SceneManager.LoadScene(_nextSceneName);
+		SceneManager.LoadScene("03-GetPlayerReady");
 	}
 }
